@@ -10,6 +10,13 @@ publish = false
 # Open HEIC/HEIF photos (the optional photocraft-heif crate). Not default so distributors choose
 # it; official builds (CI, packaging/, release) build with `--features heif`.
 heif = ["photocraft-codecs/heif"]
+# Opt-in, for self-hosted web deployments only (off by default, never in the desktop app, and
+# separate from the desktop update check proposed in #2295): every visitor sees a notice when a
+# newer PhotoCraft release exists, and the administrator can sign in and start the update, which
+# `craft-updated` (craft-libs' craft-update crate) performs on the server. Build with
+# `trunk build --release --features self-hosted-update`; setup in docs/self-hosted-updates.md.
+# Without it the web app makes no update requests at all.
+self-hosted-update = ["dep:craft-update"]
 
 [lints]
 workspace = true
@@ -19,6 +26,7 @@ name = "photocraft-web"
 path = "src/main.rs"
 
 [dependencies]
+craft-update = { git = "https://github.com/storytold/craft-libs", rev = "9b85a7c3973b6c799a28553a5376789d33846aa0", optional = true, features = ["egui", "web"] }
 photocraft-engine = { workspace = true }
 photocraft-io = { workspace = true }
 photocraft-codecs = { workspace = true }
@@ -37,6 +45,8 @@ js-sys = "0.3"
 web-sys = { version = "0.3", features = ["Window", "Document", "Element", "HtmlElement", "HtmlCanvasElement", "HtmlAnchorElement", "Blob", "BlobPropertyBag", "Url", "Location", "CssStyleDeclaration", "Storage", "Event", "EventTarget", "MouseEvent", "PointerEvent", "BeforeUnloadEvent", "AbortController", "AbortSignal", "DomException", "Response", "IdbFactory", "IdbOpenDbRequest", "IdbDatabase", "IdbRequest", "IdbTransaction", "IdbTransactionMode", "IdbObjectStore", "IdbCursor", "IdbCursorWithValue", "RequestInit", "Navigator"] }
 
 [dev-dependencies]
+eframe = { workspace = true }
+egui_kittest = { workspace = true, features = ["eframe"] }
 serde_json = { workspace = true }
 photocraft-paint = { workspace = true }
 photocraft-psd = { workspace = true }

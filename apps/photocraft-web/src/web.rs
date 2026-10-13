@@ -97,7 +97,16 @@ pub fn start() {
                     }
                     let unsaved = Arc::new(AtomicBool::new(false));
                     guard_unload(unsaved.clone());
-                    Ok(Box::new(WebShell { app, inbox, unsaved, served, database, presets }))
+                    Ok(Box::new(WebShell {
+                        app,
+                        inbox,
+                        unsaved,
+                        served,
+                        database,
+                        presets,
+                        #[cfg(feature = "self-hosted-update")]
+                        updates: crate::updates::browser(cc.egui_ctx.clone()),
+                    }))
                 }),
             )
             .await;
@@ -228,6 +237,8 @@ struct WebShell {
     served: Served,
     database: Option<web_sys::IdbDatabase>,
     presets: crate::preset_bridge::Bridge,
+    #[cfg(feature = "self-hosted-update")]
+    updates: crate::updates::Updates<craft_update::web::Client>,
 }
 
 impl WebShell {
@@ -305,6 +316,8 @@ impl eframe::App for WebShell {
     }
 
     fn ui(&mut self, ui: &mut egui::Ui, frame: &mut eframe::Frame) {
+        #[cfg(feature = "self-hosted-update")]
+        self.updates.show(ui);
         // Only while a preset change is unsaved. Storage the browser denies from the start (a
         // sandboxed iframe, blocked site data) loses nothing until the first change, and that
         // change brings the banner with the reason.
