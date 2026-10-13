@@ -4127,3 +4127,43 @@ colorRange	Invert	Invertuj
 layers	Fill	Popuna
 layers	Fill:	Popuna:
 shape	Appearance	Izgled
+
+# Added on merge with main (spelling, Camera Raw settings files, printing, Object Finder, brush
+# controls, actions, gradient presets, Pen Auto Add/Delete)
+	Add to Dictionary	Dodaj u rečnik
+	No Spelling Suggestions	Nema predloga za pravopis
+	Save Settings…	Sačuvaj podešavanja…
+	Load Settings…	Učitaj podešavanja…
+	Save these settings as a Camera Raw .xmp file	Sačuvaj ova podešavanja kao Camera Raw .xmp datoteku
+	Load settings from a Camera Raw .xmp file	Učitaj podešavanja iz Camera Raw .xmp datoteke
+	Loaded Camera Raw settings from {file}	Camera Raw podešavanja su učitana iz {file}
+	Loaded Camera Raw settings from {file} ({n} not supported)	Camera Raw podešavanja su učitana iz {file} (nije podržano: {n})
+	Manage submitted jobs in the system print queue	Upravljajte poslatim poslovima u sistemskom redu za štampu
+	Pick Color From Image	Uzmi boju sa slike
+	Drag to pan · Scroll to zoom · Double-click to fit	Prevucite za pomeranje · Skrolujte za zumiranje · Dvaput kliknite za uklapanje
+	Object Finder	Pronalazač objekata
+	No object found there — drag a rectangle around it	Tu nije pronađen nijedan objekat — prevucite pravougaonik oko njega
+	Clear Brush Controls	Obriši kontrole četkice
+	Reset All Locked Settings	Vrati sva zaključana podešavanja
+	Copy Texture to Other Tools	Kopiraj teksturu u druge alatke
+	Load Actions…	Učitaj radnje…
+	Save Actions…	Sačuvaj radnje…
+	{name} (Photoshop)	{name} (Photoshop)
+	{message} ({note})	{message} ({note})
+@plural	Loaded {n} action from {file}|Loaded {n} actions from {file}	Učitana je {n} radnja iz {file}|Učitane su {n} radnje iz {file}|Učitano je {n} radnji iz {file}
+@plural	{n} step has no PhotoCraft equivalent yet|{n} steps have no PhotoCraft equivalent yet	{n} korak još nema ekvivalent u PhotoCraftu|{n} koraka još nemaju ekvivalent u PhotoCraftu|{n} koraka još nema ekvivalent u PhotoCraftu
+@plural	Saved {n} action to {file}|Saved {n} actions to {file}	Sačuvana je {n} radnja u {file}|Sačuvane su {n} radnje u {file}|Sačuvano je {n} radnji u {file}
+@plural	{n} step with no Photoshop equivalent left out|{n} steps with no Photoshop equivalent left out	Izostavljen je {n} korak bez ekvivalenta u Photoshopu|Izostavljena su {n} koraka bez ekvivalenta u Photoshopu|Izostavljeno je {n} koraka bez ekvivalenta u Photoshopu
+	Insert Stop…	Umetni zaustavljanje…
+	Save Set…	Sačuvaj skup…
+	Message:	Poruka:
+	Allow Continue	Dozvoli nastavak
+	Show dialog during playback	Prikaži dijalog tokom puštanja
+	Select an action first	Prvo izaberite radnju
+	Action playback stopped	Puštanje radnje je zaustavljeno
+	Step {step} is waiting for its dialog	Korak {step} čeka svoj dijalog
+@plural	{n} action|{n} actions	{n} radnja|{n} radnje|{n} radnji
+	Gradient Preset Options	Opcije šablona gradijenta
+	Import .GRD	Uvezi .GRD
+	Choose a gradient file (.grd).	Izaberite datoteku gradijenta (.grd).
+	Auto Add/Delete	Automatsko dodavanje/brisanje
